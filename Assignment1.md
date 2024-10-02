@@ -24,17 +24,21 @@
 5. **Open Book**:
     - While this assignment may seem extensive, remember that it’s open book. Most of the material is already covered in the notebook I’ve provided, which includes working code, examples, and detailed narration in markdown cells.
 
-
-
-
-By following these guidelines, you ensure both a clear written and verbal presentation of your solutions.
+**Important Note**: If I notice excessive overlap between solutions submitted by different individuals, both assignments will be given a score of 0. Please ensure that all work is your own.
 
 
 
 ### **Section A: Package Management**
 
+Total Questions: `4` * 2 (For explanation)
+Total Marks: `8`
+
+
 #### A1. File Creation and Variable Definition
-1. Create a file `lib.py` inside a folder called `utils` and define a variable with a value.
+1. Create a file `lib.py` inside a folder called `utils` and define a variable with a value. This can be done either:
+   - manually
+   - using bash commands **hint**: `touch`, `echo`, `>`
+   - `with open`
 
 #### A2. Importing Variables
 2. Import the variable using `import <>`.
@@ -44,6 +48,11 @@ By following these guidelines, you ensure both a clear written and verbal presen
 ---
 
 ### **Section B: Data Types and Structures**
+
+Total Questions: `20` * 2 (For explanation)
+
+Total Marks: `40`
+
 
 1. How can you explore all available methods and attributes that you can call on a list, string, or tuple object? Show examples for all three.
    - **Hint**: Use a built-in Python function that lists everything defined for an object, including methods and attributes. Try applying it to a list, string, and tuple.
@@ -87,6 +96,11 @@ By following these guidelines, you ensure both a clear written and verbal presen
 
 ### **Section C: Iterables vs Generators**
 
+Total Questions: `2` * 2 (For explanation) * 3 (For Importance)
+
+Total Marks: `12`
+
+
 #### C1. Properties of Generators
 1. Explain whether generators are iterable or not.
 2. Can the membership operator (`in`) be performed on a generator? Show me an example of proving or disproving.
@@ -95,15 +109,24 @@ By following these guidelines, you ensure both a clear written and verbal presen
 
 ### **Section D: Dictionary Operations**
 
+Total Questions: `1` * 2 (For explanation) * 2 (For Importance)
+
+Total Marks: `4`
+
 #### D1. Key Lookup
-1. Write a task to return the key name of a dictionary given a value.
+1. Write a function to return the key name of a dictionary given a value. Make sure to include doc string and type hinting.
 
 ---
 
-### **Section E: Take-Home Exercises**
+### **Section E: Function Exercises**
+
+Total Questions: `1` * 2 (For explanation) * 3 (For Importance)
+
+Total Marks: `6`
+
 
 #### E1. Simple Programs
-1. Write a program that takes a series of single-digit numbers and returns their sum.
+1. Write a function that takes a series of single-digit numbers and returns their sum.
    - Use a for loop.
    - Use the `+=` operator.
    - Make sure to use `*args`. Explain how this works.
@@ -118,6 +141,11 @@ By following these guidelines, you ensure both a clear written and verbal presen
 
 ### **Section F: Control Flow Practice**
 
+Total Questions: `3` * 2 (For explanation) 
+
+Total Marks: `6`
+
+
 #### F1. Basic Control Flow
 1. Create a function to check if a number is positive, negative, or zero.
    - **Hint**: Use conditional statements (if, elif, else) to check the sign of the number.
@@ -130,6 +158,11 @@ By following these guidelines, you ensure both a clear written and verbal presen
 
 ### **Section G: List Manipulation**
 
+Total Questions: `3` * 2 (For explanation) 
+
+Total Marks: `6`
+
+
 #### G1. List Operations
 1. Create an unsorted list of integers from 1 to 8.
 2. Add the number 9 to the unsorted list.
@@ -139,6 +172,11 @@ By following these guidelines, you ensure both a clear written and verbal presen
 ---
 
 ### **Section H: Functions and Decorators**
+
+Total Questions: `4` * 2 (For explanation) * 1.5 (Importance)
+
+Total Marks: `12`
+
 
 #### H1. Nested Functions
 1. Write a function that defines another function inside it and uses a variable from the outer function in the inner one.  
@@ -153,6 +191,11 @@ By following these guidelines, you ensure both a clear written and verbal presen
 
 ### **Section I: Comprehensions**
 
+Total Questions: `3` * 2 (For explanation) 
+
+Total Marks: `6`
+
+
 #### I1. List and Set Comprehensions
 1. Write a list comprehension to return odd numbers from a list of numbers from 1 to 10.
 2. Write a set comprehension to remove duplicate letters from a string and print the unique characters.
@@ -163,6 +206,11 @@ By following these guidelines, you ensure both a clear written and verbal presen
 ---
 
 ### **Section J: Dictionaries**
+
+Total Questions: `5` * 2 (For explanation) 
+
+Total Marks: `10`
+
 
 #### J1. Nested Dictionaries and Grade Manipulation
 1. Create a nested dictionary with student names as keys and another dictionary as values containing their grades.
@@ -178,6 +226,10 @@ By following these guidelines, you ensure both a clear written and verbal presen
 ---
 
 ### **Section K: Iterables and Recursion**
+
+Total Questions: `1` * 2 (For explanation) * 3 (Importance)
+
+Total Marks: `6`
 
 #### K1. Recursive Functions
 1. Write a recursive function to compute the nth Fibonacci number. Show me exactly how it works by adding print statements in the function and going over examples.
@@ -217,7 +269,34 @@ By following these guidelines, you ensure both a clear written and verbal presen
 
 ### **Section L: Object-Oriented Programming (OOP)**
 
+Total Questions: `2` * 2 (For explanation) 
+Total Marks: `4`
+
+
 #### L1. Basic OOP Concepts
 1. List two properties of a class that are helpful while programming.
 2. Explain whether an instance of a class is the same as an object.
 
+
+
+### **Total Marks Calculation**
+
+Here’s the table with only the **Total Questions** and **Total Marks** columns:
+
+| Section  | Total Questions | Total Marks |
+|----------|-----------------|-------------|
+| Section A | 4               | 8           |
+| Section B | 20              | 40          |
+| Section C | 2               | 12          |
+| Section D | 1               | 4           |
+| Section E | 1               | 6           |
+| Section F | 3               | 6           |
+| Section G | 3               | 6           |
+| Section H | 4               | 12          |
+| Section I | 3               | 6           |
+| Section J | 5               | 10          |
+| Section K | 1               | 6           |
+| Section L | 2               | 4           |
+
+### **Total Questions: 49**  
+### **Total Marks: 120**
