@@ -53,59 +53,75 @@
 ### Dataset Loading and Initial Validation
 
 1. **Download and Validate Datatypes**:
-   - Download the `taxis` dataset from Seaborn. `sns.load_dataset`
-   - Validate that the `pickup` and `dropoff` columns are of datetime type.
+  - Download the `taxis` dataset from Seaborn. `sns.load_dataset`
+  - Validate that the `pickup` and `dropoff` columns are of datetime type.
    
 2. **Calculate Trip Duration**:
-   - Compute the time it took for each ride using the `pickup` and `dropoff` columns.
-   - hint: `data.dt.total_seconds() / 60` gives you total minutes. Convert seconds to hours
+  - Compute the time it took for each ride using the `pickup` and `dropoff` columns.
+  - hint: `data.dt.total_seconds() / 60` gives you total minutes. Convert seconds to hours
 
 
 3. **Calculate Dollar Metrics**:
-   - Calculate `$ per hour` earned for each ride. hint: maths
-   - Calculate `$ per km` for each ride. hint: maths
+  - Calculate `$ per hour` earned for each ride. hint: maths
+  - Calculate `$ per km` for each ride. hint: maths
 
 4. **Correlations**:
-   - Show the correlation between `color` and `$ per hour`.
-   - Show the correlation between `passengers` and `$ per hour`.
-   - Show the correlation between `pickup_borough` and `$ per km`.
-   - Rationalize the results? What is the strongest theoretical correlation possible and weakest? 
+  - For each of the following combinations, show the relationship using a scatterplot.
+  - Then calculate the correlation between the two variables.
+  - Use the scatterplot to validate if your correlation value makes sense.
+  - Rationalize the results? What is the strongest theoretical correlation possible and weakest? 
+
+    - `color` and `$ per hour`.
+    - `passengers` and `$ per hour`.
+    - `pickup_borough` and `$ per km`.
 
 ### Visualizations
 
 5. **Distribution Plots**:
-   - Plot the distribution of `$ per hour` and `$ per km` using two visualizations:
-     - Two subplots placed side by side.
-     - One subplot overlaying the distributions on each other.
-     - Make sure I can see the distributions. Don't make a silly mistake with yaxis here.
+  - Plot the distribution of `$ per hour` and `$ per km` using two visualizations:
+    - Two subplots placed side by side.
+    - One subplot overlaying the distributions on each other.
+    - Make sure I can see the distributions. Don't make a silly mistake with yaxis here.
 
 ### Synthetic Column Creation and Currency Normalization
 
 6. **Create a Synthetic Currency Column**:
-   - Create a new column `currency` which chooses between `GBP`,`USD`,`EUR`,`MXN`,`AUD` using `random.choice`.
-   - Hint: Do this in a list comp where `i in range(len(taxis_df))`
+  - Create a new column `currency` which chooses between `GBP`,`USD`,`EUR`,`MXN`,`AUD` using `random.choice`.
+  - Hint: Do this in a list comp where `i in range(len(taxis_df))`
    
 7. **Normalize Currency to CAD**:
-   - Normalize the currency to CAD using any of the following strategies:
+  - Create a dictionary that contains the mapping from the currencies from above to CAD. ie:
+
+    ```python
+    currency_to_cad = {
+        "GBP": 1.70, 
+        "USD": 1.35, 
+        "EUR": 1.45, 
+        "MXN": 0.075,
+        "AUD": 0.90  
+    }
+    ```
+   - Normalize the `total` column of taxis to CAD using any of the following strategies:
      - `apply`
      - `lambda`
      - `iterrows`
    - Do not apply a bad solution.
   
-    **note**: You will not be using this normalized amount in later questions. For all references to total, use the original `total` from the dataset.
+  **Note**: You will not be using this normalized amount in later questions. For all references to total, use the original `total` from the dataset.
 
 ### Date Extraction
 
 8. **Extract Date Components**:
    - Create a column named `date` with components `year`, `month`, and `day` extracted from `pickup`.
+   - Hint: Ensure that the new column date is a datetime object by using `pd.to_datetime(date)`
 
 ### Pivot Tables
 
 9. **Pivot for Sum by Multiple Columns**:
-   - Create a pivot table to show the total sum grouped by  `date`, `color`, `passengers`, `pickup_borough`, and `dropoff_borough`. 
+   - Create a pivot table to show the total sum grouped by  `date`, `color`, `passengers`, `pickup_borough`, and `dropoff_borough`. You can choose whether to group by index or by column.
 
 10. **Pivot for Average Dollar per Hour by Multiple Columns**:
-   - Create a pivot table to show the average `$ per hour` grouped by `date`, `color`, `pickup_borough`, and `dropoff_borough`.
+   - Create a pivot table to show the average `$ per hour` grouped by `date`, `color`, `pickup_borough`, and `dropoff_borough`. You can choose whether to group by index or by column.
    - Assign this table to `taxis_dollar_hr_rate`.
 
 11. **Reverse Pivot Table**:
@@ -149,8 +165,8 @@
      - Label the axis, title, add legend etc.
 
 19. **Error Calculations**:
-   - Calculate **L1 Error** for each prediction and add it as a new column (`l1norm = truth - prediction`).
-   - Calculate **L2 Error** for each prediction and add it as a new column (`l2norm = (truth - prediction)^2`).
+   - Calculate **L1 Error** for each prediction and add it as a new column (`l1err = truth - prediction`).
+   - Calculate **L2 Error** for each prediction and add it as a new column (`l2err = (truth - prediction)^2`).
 
 
 20. **Scatter Plot of Predicted vs. L1 Error**:
@@ -174,8 +190,8 @@ run: `pip install -q duckdb-engine duckdb`
 
 Convert the original `taxis` dataframe from seaborn into a duckdb table. Use `duckdb.register`
 
-23. Write a query to return the third largest total from the entire table using both `row_number` and common table expression together.
-24. Do the same as above, but this time use `dense_rank` instead of `row_number` and explain the difference.
+23. Write a query to return the third largest total from the entire table using both `row_number` and Common Table Expression together.
+24. Do the same as above, but this time use `dense_rank` instead of `row_number` and explain the difference. Which one is more correct, why?
 25. Tell me the sum total for each `pickup_borough` call it `pickup_borough_sum_total`. Filter for `pickup_borough_sum_total` > 10
 26. Filter for `total` > 10 then do sum total for each `pickup_borough` call it `pickup_borough_sum_total`.
 27. Explain the difference between the last 2 queries.
