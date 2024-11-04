@@ -17,7 +17,7 @@
    - Write a **basic explanation** of each solution in a **Markdown cell** below the code.
    - Use **bullet points** or **jot notes**. Keep it brief and clear. 
    - **Do not write paragraphs**. The explanation is meant to help guide your verbal explanation in the recording.
-   - Do **not** read word to word
+   - Do **not** read word to word. Otherwise you will recieve a 0.
 
 4. **Recording Expectations**:
    - During your recording, use the Markdown notes as a reference to explain the code verbally.
@@ -32,7 +32,9 @@
 
 ### Learnings from Assignment 1 Submissions:
 
-- Missing Submission Requirements (Future Assignments that not not meet criteria will receive 0%)
+Future Assignments that not not meet criteria or repeat these mistakes will receive a 0.
+
+- Missing Submission Requirements
 - Explanations Not Submitted
 - Missing Screen Recordings
 - Webcam Disabled
@@ -68,8 +70,8 @@
 4. **Correlations**:
   - For each of the following combinations, show the relationship using a scatterplot.
   - Then calculate the correlation between the two variables.
-  - Use the scatterplot to validate if your correlation value makes sense.
-  - Rationalize the results? What is the strongest theoretical correlation possible and weakest? 
+  - Create the scatterplot to validate if your correlation value makes sense. Rationalize the results? 
+  - What is the strongest and weakest theoretical correlation possible? 
 
     - `color` and `$ per hour`.
     - `passengers` and `$ per hour`.
@@ -81,7 +83,8 @@
   - Plot the distribution of `$ per hour` and `$ per km` using two visualizations:
     - Two subplots placed side by side.
     - One subplot overlaying the distributions on each other.
-    - Make sure I can see the distributions. Don't make a silly mistake with yaxis here.
+    - Make sure I can see the distributions. 
+    - Don't make a silly mistake with yaxis here.
 
 ### Synthetic Column Creation and Currency Normalization
 
@@ -98,7 +101,7 @@
         "USD": 1.35, 
         "EUR": 1.45, 
         "MXN": 0.075,
-        "AUD": 0.90  
+        "AUD": 0.90,
     }
 ```
                    
@@ -161,7 +164,7 @@
 18. **Fit Regression Models**:
    - Fit both linear and logistic regression model on univariate data without splitting data.
    - Forecast the next `15` days of total amounts. 
-   - Set the predictions as new columns in `time_series`.
+   - Set the predictions as new columns in `time_series`. Don't lose the `date` column.
 
 19. **Prediction Plot**:
    - Plot the true values and predictions in a single plot using:
@@ -169,6 +172,7 @@
      - Red for linear regression
      - Blue for logistic regression
      - Label the axis, title, add legend etc.
+     - Your x-axis should be date time objects.
 
 20. **Error Calculations**:
    - Calculate **L1 Error** for each prediction and add it as a new column (`l1err = truth - prediction`).
