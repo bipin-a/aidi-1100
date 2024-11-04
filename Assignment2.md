@@ -92,7 +92,7 @@
 7. **Normalize Currency to CAD**:
   - Create a dictionary that contains the mapping from the currencies from above to CAD. ie:
 
-    ```python
+```python
     currency_to_cad = {
         "GBP": 1.70, 
         "USD": 1.35, 
@@ -100,7 +100,8 @@
         "MXN": 0.075,
         "AUD": 0.90  
     }
-    ```
+```
+                   
    - Normalize the `total` column of taxis to CAD using any of the following strategies:
      - `apply`
      - `lambda`
@@ -150,39 +151,45 @@
 16. **Derivative and Integral**:
    - Compute the derivative and integral of the `time_series`.
 
+17. **Probability Density Function, Cumulative Distribution Functions**
+   - Using a PDF, tell me what value of time_series is most likely to occur? Explain to me how likelyhood is calculated.
+   - Using a CDF, show me at which threshold value results in the top 5% outliers and bottom 5% outlier to be removed.
+
+
 ### Regression and Prediction
 
-17. **Fit Regression Models**:
+18. **Fit Regression Models**:
    - Fit both linear and logistic regression model on univariate data without splitting data.
    - Forecast the next `15` days of total amounts. 
    - Set the predictions as new columns in `time_series`.
 
-18. **Prediction Plot**:
+19. **Prediction Plot**:
    - Plot the true values and predictions in a single plot using:
      - Black for actual data
      - Red for linear regression
      - Blue for logistic regression
      - Label the axis, title, add legend etc.
 
-19. **Error Calculations**:
+20. **Error Calculations**:
    - Calculate **L1 Error** for each prediction and add it as a new column (`l1err = truth - prediction`).
    - Calculate **L2 Error** for each prediction and add it as a new column (`l2err = (truth - prediction)^2`).
 
 
-20. **Scatter Plot of Predicted vs. L1 Error**:
+21. **Scatter Plot of Predicted vs. L1 Error**:
    - Create a scatter plot with predicted values (x-axis) and L1 error (y-axis) for the linear model.
    - Discuss what this plot indicates about heteroskedasticity.
 
 ### Autocorrelation Analysis
 
-21. **Autocorrelation for Lags**:
+22. **Autocorrelation for Lags**:
    - Compute autocorrelation values for lags from 1 to 8 for `time_series`. Be smart, use a loop or list comp.
    - Identify the lag with the strongest and weakest autocorrelation. Rationalize the results.
 
 ### Model Training on Entire Dataset
 
-22. **Train on Entire Dataset**:
+23. **Train on Entire Dataset**:
    - Explain if it's ok to ever train a model on the entire dataset. Why or why not?
+
 
 
 ### SQL:
@@ -190,9 +197,11 @@ run: `pip install -q duckdb-engine duckdb`
 
 Convert the original `taxis` dataframe from seaborn into a duckdb table. Use `duckdb.register`
 
-23. Write a query to return the third largest total from the entire table using both `row_number` and Common Table Expression together.
-24. Do the same as above, but this time use `dense_rank` instead of `row_number` and explain the difference. Which one is more correct, why?
-25. Tell me the sum total for each `pickup_borough` call it `pickup_borough_sum_total`. Filter for `pickup_borough_sum_total` > 10
-26. Filter for `total` > 10 then do sum total for each `pickup_borough` call it `pickup_borough_sum_total`.
-27. Explain the difference between the last 2 queries.
-28. In a single query get, sum total, average total, min total, sum distance, max distance for each combination of pickup_borough and color. Hint: you'll need to group by 2 fields here.
+24. Write a query to return the third largest total from the entire table using both `row_number` and Common Table Expression together.
+25. Do the same as above, but this time use `dense_rank` instead of `row_number` and explain the difference. Which one is more correct, why?
+26. Tell me the sum total for each `pickup_borough` call it `pickup_borough_sum_total`. Filter for `pickup_borough_sum_total` > 10
+27. Filter for `total` > 10 then do sum total for each `pickup_borough` call it `pickup_borough_sum_total`.
+28. Explain the difference between the last 2 queries.
+29. In a single query get, sum total, average total, min total, sum distance, max distance for each combination of pickup_borough and color. Hint: you'll need to group by 2 fields here.
+
+
