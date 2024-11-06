@@ -73,9 +73,11 @@ Future Assignments that not not meet criteria or repeat these mistakes will rece
   - Create the scatterplot to validate if your correlation value makes sense. Rationalize the results? 
   - What is the strongest and weakest theoretical correlation possible? 
 
-    - `color` and `$ per hour`.
     - `passengers` and `$ per hour`.
-    - `pickup_borough` and `$ per km`.
+    - `passengers` and `$ per km`.
+
+
+  - Explain how you would get the correlation between a categorical variable such as `color` and a continous numerical such as `$ per hour`? (hint: encoding methods?) 
 
 ### Visualizations
 
@@ -106,8 +108,8 @@ Future Assignments that not not meet criteria or repeat these mistakes will rece
 ```
                    
    - Normalize the `total` column of taxis to CAD using any of the following strategies:
-     - `apply`
-     - `lambda`
+     - `apply` & a `def` function
+     - ``apply` & a `lambda` function
      - `iterrows`
    - Do not apply a bad solution.
   
@@ -155,8 +157,8 @@ Future Assignments that not not meet criteria or repeat these mistakes will rece
    - Compute the derivative and integral of the `time_series`.
 
 17. **Probability Density Function, Cumulative Distribution Functions**
-   - Using a PDF, tell me what value of time_series is most likely to occur? Explain to me how likelyhood is calculated.
-   - Using a CDF, show me at which threshold value results in the top 5% outliers and bottom 5% outlier to be removed.
+   - Using a PDF, tell me what value of time_series is most likely to occur? Explain to me how likelyhood is calculated. You **don't** need to return the numerical value. 
+   - Using a CDF, show me at which threshold value results in the top 5% outliers and bottom 5% outlier to be removed. You **do** need to return the numerical values. Filter the dataframe such that the outliers are filtered out. (hint: use mask)
 
 
 ### Regression and Prediction
@@ -193,7 +195,6 @@ Future Assignments that not not meet criteria or repeat these mistakes will rece
 
 23. **Train on Entire Dataset**:
    - Explain if it's ok to ever train a model on the entire dataset. Why or why not?
-
 
 
 ### SQL:
