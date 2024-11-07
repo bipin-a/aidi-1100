@@ -156,7 +156,14 @@ Future Assignments that not not meet criteria or repeat these mistakes will rece
 16. **Derivative and Integral**:
    - Compute the derivative and integral of the `time_series`.
 
-17. **Probability Density Function, Cumulative Distribution Functions**
+17. **Probability Density Function, Cumulative Distribution Functions** 
+
+       Explain Probability Density Function.
+    
+       Explain Cumulative Distribution Functions.
+
+       Note: Use your `time_series` object 
+
    - Using a PDF, tell me what value of time_series is most likely to occur? Explain to me how likelyhood is calculated. You **don't** need to return the numerical value. 
    - Using a CDF, show me at which threshold value results in the top 5% outliers and bottom 5% outlier to be removed. You **do** need to return the numerical values. Filter the dataframe such that the outliers are filtered out. (hint: use mask)
 
@@ -164,8 +171,9 @@ Future Assignments that not not meet criteria or repeat these mistakes will rece
 ### Regression and Prediction
 
 18. **Fit Regression Models**:
-   - Fit both linear and logistic regression model on univariate data without splitting data.
-   - Forecast the next `15` days of total amounts. 
+   - Fit OLS Linear Regression Model, Lasso Regression and Ridge Regression on univariate data without splitting data. 3 Models with 3 predictions
+   - Forecast the next `15` days of total amounts.
+   - Forecast the training data too.
    - Set the predictions as new columns in `time_series`. Don't lose the `date` column.
 
 19. **Prediction Plot**:
@@ -204,7 +212,7 @@ Convert the original `taxis` dataframe from seaborn into a duckdb table. Use `du
 
 24. Write a query to return the third largest total from the entire table using both `row_number` and Common Table Expression together.
 25. Do the same as above, but this time use `dense_rank` instead of `row_number` and explain the difference. Which one is more correct, why?
-26. Tell me the sum total for each `pickup_borough` call it `pickup_borough_sum_total`. Filter for `pickup_borough_sum_total` > 10
+26. Tell me the sum total for each `pickup_borough` call it `pickup_borough_sum_total`. Filter for `pickup_borough_sum_total` > 1000
 27. Filter for `total` > 10 then do sum total for each `pickup_borough` call it `pickup_borough_sum_total`.
 28. Explain the difference between the last 2 queries.
 29. In a single query get, sum total, average total, min total, sum distance, max distance for each combination of pickup_borough and color. Hint: you'll need to group by 2 fields here.
