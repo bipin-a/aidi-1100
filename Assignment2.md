@@ -54,6 +54,8 @@ Future Assignments that not not meet criteria or repeat these mistakes will rece
 
 ### Dataset Loading and Initial Validation
 
+Total Marks: 10
+
 1. **Download and Validate Datatypes**:
   - Download the `taxis` dataset from Seaborn. `sns.load_dataset`
   - Validate that the `pickup` and `dropoff` columns are of datetime type.
@@ -61,7 +63,6 @@ Future Assignments that not not meet criteria or repeat these mistakes will rece
 2. **Calculate Trip Duration**:
   - Compute the time it took for each ride using the `pickup` and `dropoff` columns.
   - hint: `data.dt.total_seconds() / 60` gives you total minutes. Convert seconds to hours
-
 
 3. **Calculate Dollar Metrics**:
   - Calculate `$ per hour` earned for each ride. hint: maths
@@ -76,10 +77,11 @@ Future Assignments that not not meet criteria or repeat these mistakes will rece
     - `passengers` and `$ per hour`.
     - `passengers` and `$ per km`.
 
-
   - Explain how you would get the correlation between a categorical variable such as `color` and a continous numerical such as `$ per hour`? (hint: encoding methods?) 
 
 ### Visualizations
+
+Total Marks: 5
 
 5. **Distribution Plots**:
   - Plot the distribution of `$ per hour` and `$ per km` using two visualizations:
@@ -89,6 +91,8 @@ Future Assignments that not not meet criteria or repeat these mistakes will rece
     - Don't make a silly mistake with yaxis here.
 
 ### Synthetic Column Creation and Currency Normalization
+
+Total Marks: 10
 
 6. **Create a Synthetic Currency Column**:
   - Create a new column `currency` which chooses between `GBP`,`USD`,`EUR`,`MXN`,`AUD` using `random.choice`.
@@ -115,13 +119,13 @@ Future Assignments that not not meet criteria or repeat these mistakes will rece
   
   **Note**: You will not be using this normalized amount in later questions. For all references to total, use the original `total` from the dataset.
 
-### Date Extraction
+### Pivot Tables
+
+Total Marks: 10
 
 8. **Extract Date Components**:
    - Create a column named `date` with components `year`, `month`, and `day` extracted from `pickup`.
    - Hint: Ensure that the new column date is a datetime object by using `pd.to_datetime(date)`
-
-### Pivot Tables
 
 9. **Pivot for Sum by Multiple Columns**:
    - Create a pivot table to show the total sum grouped by  `date`, `color`, `passengers`, `pickup_borough`, and `dropoff_borough`. You can choose whether to group by index or by column.
@@ -136,6 +140,8 @@ Future Assignments that not not meet criteria or repeat these mistakes will rece
 
 ### Time Series Analysis
 
+Total Marks: 10
+
 12. **Sum Dollar per Day**:
    - Using `resample` or `groupby` by daily frequency, compute the total dollar amount per day, and rename this series `time_series`.
 
@@ -146,12 +152,8 @@ Future Assignments that not not meet criteria or repeat these mistakes will rece
 14. **Line Plot**:
    - Plot `time_series` as a line plot.
 
-### Groupby vs. Pivot Explanation
-
 15. **Explain Groupby vs. Pivot**:
    - Explain how `groupby` differs from `pivot`.
-
-### Calculus Operations on Time Series
 
 16. **Derivative and Integral**:
    - Compute the derivative and integral of the `time_series`.
@@ -170,6 +172,8 @@ Future Assignments that not not meet criteria or repeat these mistakes will rece
 
 ### Regression and Prediction
 
+Total Marks: 20
+
 18. **Fit Regression Models**:
    - Fit OLS Linear Regression Model, Lasso Regression and Ridge Regression on univariate data without splitting data. 3 Models with 3 predictions
    - Forecast the next `15` days of total amounts.
@@ -177,10 +181,8 @@ Future Assignments that not not meet criteria or repeat these mistakes will rece
    - Set the predictions as new columns in `time_series`. Don't lose the `date` column.
 
 19. **Prediction Plot**:
-   - Plot the true values and predictions in a single plot using:
-     - Black for actual data
-     - Red for linear regression
-     - Blue for logistic regression
+   - Plot the true values and predictions in a single plot using (dates as x axis):
+     - Have a different color for each prediction.
      - Label the axis, title, add legend etc.
      - Your x-axis should be date time objects.
 
@@ -188,24 +190,22 @@ Future Assignments that not not meet criteria or repeat these mistakes will rece
    - Calculate **L1 Error** for each prediction and add it as a new column (`l1err = truth - prediction`).
    - Calculate **L2 Error** for each prediction and add it as a new column (`l2err = (truth - prediction)^2`).
 
-
 21. **Scatter Plot of Predicted vs. L1 Error**:
    - Create a scatter plot with predicted values (x-axis) and L1 error (y-axis) for the linear model.
    - Discuss what this plot indicates about heteroskedasticity.
 
-### Autocorrelation Analysis
-
 22. **Autocorrelation for Lags**:
    - Compute autocorrelation values for lags from 1 to 8 for `time_series`. Be smart, use a loop or list comp.
    - Identify the lag with the strongest and weakest autocorrelation. Rationalize the results.
-
-### Model Training on Entire Dataset
 
 23. **Train on Entire Dataset**:
    - Explain if it's ok to ever train a model on the entire dataset. Why or why not?
 
 
 ### SQL:
+
+Total Marks: 10
+
 run: `pip install -q duckdb-engine duckdb` 
 
 Convert the original `taxis` dataframe from seaborn into a duckdb table. Use `duckdb.register`
@@ -216,5 +216,3 @@ Convert the original `taxis` dataframe from seaborn into a duckdb table. Use `du
 27. Filter for `total` > 10 then do sum total for each `pickup_borough` call it `pickup_borough_sum_total`.
 28. Explain the difference between the last 2 queries.
 29. In a single query get, sum total, average total, min total, sum distance, max distance for each combination of pickup_borough and color. Hint: you'll need to group by 2 fields here.
-
-
