@@ -13,7 +13,7 @@ https://www.kaggle.com/datasets/fedesoriano/company-bankruptcy-prediction
 
 ### Additional Submission Requirements
 
-- Summarize the decision for each key area (model selection, class imbalance handling, feature engineering, etc.).
+- Summarize the decision for each key area.
 - Explain your rationale under each decision. (No longer than 4 jot notes)
 - Use Jot Notes! If you use paragraphs, I will not read it, and you **will get a 0.**
 - Be concise, if you are making me read useless or redundant sentences, you will **lose** marks!
