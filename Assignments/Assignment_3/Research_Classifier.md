@@ -14,6 +14,7 @@ https://www.kaggle.com/datasets/fedesoriano/company-bankruptcy-prediction
 ### Additional Submission Requirements
 
 - Summarize the decision for each key area.
+- I do not need a definition. I just need a "why".
 - Explain your rationale under each decision. (No longer than 4 jot notes)
 - Use Jot Notes! If you use paragraphs, I will not read it, and you **will get a 0.**
 - Be concise, if you are making me read useless or redundant sentences, you will **lose** marks!
@@ -28,7 +29,7 @@ https://www.kaggle.com/datasets/fedesoriano/company-bankruptcy-prediction
 1. **Choosing the Initial Models**:
    - Research and select which models to the problem. 
    - Consider whether to begin with simpler models (e.g., Logistic Regression for interpretability) or more complex models (e.g., XGBoost, Random Forest, or CatBoost) that handle non-linear relationships.
-   - Or do you want to do a supervised clustering approach, where high-hisk companies are grouped into clusters based on features? Why or why not?
+   - Or do you want to do an unsupervised clustering approach, where high-hisk companies are grouped into clusters based on features? Why or why not?
    - Consider letting a simple model like Logistic Regression be a benchmark model. Explain why this is important.
 
 2. **Data Pre-processing**:
@@ -40,13 +41,14 @@ https://www.kaggle.com/datasets/fedesoriano/company-bankruptcy-prediction
    - Is there a class imbalance problem in this dataset?
    - Research the pros and cons of techniques like SMOTE, undersampling, and class weighting. What potential issues could it introduce?
    - Thoughts on adding more weights to certain samples during training time?
+   - Should you stratify 
    - Explain whether you decided to apply one or more of these techniques and justify your approach.
 
 4. **Outlier Detection and Treatment**:
    - Discuss the impact of outlier treatment on fraud detection performance, especially on minority (fraud) cases.
    - Treat outliers that represent errors, technical issues, or non-predictive noise, while preserving those that may contain valuable information related to fraud patterns or risky behaviors
 
-5. **Addressing Sampling Bias**:
+5. **Addressing Sampling Bias Across train/test sets**:
    - Consider using statistical tests (e.g. PSI Test and correlation) to determine if there’s a significant difference in feature distributions between the training and test sets.
    - Explain to me why we might want to do this.
 

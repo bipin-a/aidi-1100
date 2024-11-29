@@ -13,6 +13,7 @@ https://huggingface.co/datasets/autogluon/chronos_datasets
 ### Additional Submission Requirements
 
 - Summarize the decision for each key area.
+- I do not need a definition. I just need a "why".
 - Explain your rationale under each decision. (No longer than 4 jot notes)
 - Use Jot Notes! If you use paragraphs, I will not read it, and you **will get a 0.**
 - Be concise, if you are making me read useless or redundant sentences, you will **lose** marks!
@@ -44,33 +45,38 @@ https://huggingface.co/datasets/autogluon/chronos_datasets
    - Explore techniques for handling missing values in time series, such as interpolation, forward/backward filling, or using model-based approaches.
    - Explain whether your chosen approach could affect forecast accuracy, especially around critical dates (e.g., holiday periods or weekends).
 
-5. **Feature Engineering for Time Series**:
+5. **Addressing Sampling Bias Across train/test sets**:
+   - Consider using statistical tests (e.g. PSI Test and correlation) to determine if there’s a significant difference in feature distributions between the training and test sets.
+   - Explain to me why we might want to do this.
+
+
+6. **Feature Engineering for Time Series**:
    - Propose additional features, such as day of the week, month, holidays, or lagged sales data.
    - Consider aggregations or rolling features (e.g., moving averages, rolling sums) to capture recent trends. Justify how these features could help improve forecasting accuracy.
    - Should you use auto-correlation features here?
 
-6. **Feature Selection Methods**:
+7. **Feature Selection Methods**:
    - Research feature selection methods like recursive feature elimination (RFE) or model-based selection (e.g., feature importance from XGBoost or Random Forest).
    - How many features are too many? How few are too few? Discuss the risks of overloading the model with features versus missing valuable predictors.
    - Select and justify a feature selection approach, highlighting its impact on forecast accuracy.
 
-7. **Hyperparameter Tuning Methods**:
+8. **Hyperparameter Tuning Methods**:
    - Explore hyperparameter tuning methods (e.g., grid search, random search, Bayesian Optimization) and select one that suits your model complexity and computational resources.
    - Apply this method to improve your forecasting model and document the results.
 
-8. **Cross-Validation Strategy for Time Series**:
+9. **Cross-Validation Strategy for Time Series**:
    - Research cross-validation techniques appropriate for time series (e.g., rolling-window, expanding-window validation).
    - Explain why traditional K-fold cross-validation isn’t suitable for time series and justify your chosen approach.
 
-9. **Evaluation Metrics Selection**:
+10. **Evaluation Metrics Selection**:
    - Choose evaluation metrics that reflect forecasting accuracy, such as Mean Absolute Error (MAE), Root Mean Squared Error (RMSE), Mean Absolute Percentage Error (MAPE), and Symmetric Mean Absolute Percentage Error (SMAPE).
    - Discuss the trade-offs of each metric and why you selected specific ones for evaluating your forecasting model’s performance.
 
-10. **Handling Seasonality and Long-term Trends in Drift Monitoring**:
+11. **Handling Seasonality and Long-term Trends in Drift Monitoring**:
    - Research methods to monitor and detect changes in seasonality or trends in the forecasted data over time.
    - Beyond using metrics like MAPE, explore using drift detection methods (e.g., PSI or rolling-window analysis) to assess if new data deviates from past patterns.
 
-11. **Interpreting Forecasting Results and Explainability**:
+12. **Interpreting Forecasting Results and Explainability**:
    - Consider methods for interpreting your model’s predictions, such as SHAP for feature importance in tree-based models or coefficients in linear models.
    - Explain how feature importance and trend interpretation can support business decisions, especially in a sales context where seasonality and trends are critical.
 
