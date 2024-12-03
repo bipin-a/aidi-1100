@@ -1,0 +1,13 @@
+statsmodels
+scikit-learn
+xgboost
+catboost
+matplotlib
+seaborn
+jupyterlab
+pytest
+numpy
+scipy
+fastapi
+uvicorn
+requests
