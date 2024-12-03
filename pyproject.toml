@@ -1,0 +1,20 @@
+[project]
+name = "AIDIProject"
+version = "0.1.0"
+description = "AIDI Project"
+readme = "README.md"
+dependencies = [
+    "statsmodels",
+    "scikit-learn",
+    "xgboost",
+    "catboost",
+    "matplotlib",
+    "seaborn",
+    "jupyterlab",
+    "pytest",
+    "numpy",
+    "scipy",
+    "fastapi",
+    "uvicorn",
+    "requests",
+]
