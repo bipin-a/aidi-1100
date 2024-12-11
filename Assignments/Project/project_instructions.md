@@ -85,6 +85,37 @@ The objective of this project is to implement an end-to-end machine learning wor
 
 ---
 
+1. EDA (Data & Task from Assignment 3)
+
+2. Training Pipeline:
+   - Pre-processing data (if any):
+     - If you are using a scaler, save the scaler as a pickle or joblib.
+   - Feature Engineering (if any).
+   - Feature Selection (if any).
+   - Train models (the ones you selected from A.3):
+     - Includes some kind of cross-validation.
+     - Includes hyperparameter tuning.
+   - PSI on the dataset (only important features):
+     - Make sure you do it between Train, Test, and OOS split.
+   - Evaluate the models (using the metrics from A.3).
+   - Select the best model:
+     - Save the best model as a pickle, JSON, or joblib.
+   - Explainability:
+     - SHAP values.
+
+3. FastAPI app (Server):
+   - Load the best model.
+   - Create a prediction endpoint (it will be a `POST` endpoint).
+   - If you are using a scaler:
+     - Load the scaler.
+     - Perform `scaler.transform(X)` on the data.
+   - Generate and return predictions.
+
+4. Client:
+   - Send a `POST` request of the raw data (OOS set) to the server.
+   - The server must do the preprocessing, scaling, etc., within the application.
+   - The client will then get a response of the prediction.
+
 
 ### **Tips**
 - Focus on simplicity. **Don’t overcomplicate the model or steps**.
