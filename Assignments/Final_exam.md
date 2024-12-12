@@ -1,7 +1,7 @@
 # Instructions:
 
-1. The questions which do not have an `🔊 Verbal` mark can be skipped and not required to be covered in the verbal explaination. Otherwise, when marked with  `🔊 Verbal`, you must explain it.
-2. Give all answers in jot notes. Keep it short. If you are too verbose, you will lose marks.
+1. The questions which do not have `🔊 Verbal` is not required to be covered in the verbal explanation. Otherwise, when marked with `🔊 Verbal`, you must explain it.
+3. Give all answers in jot notes. Keep it short. If you are too verbose, you will lose marks.
 
 
 
